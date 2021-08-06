@@ -1,0 +1,26 @@
+{
+  "name": "oofatfs",
+  "version": "1.0.0",
+  "description": "oofatfs compiled with Web Assembly (wasm)",
+  "main": "dist/oofatfs.js",
+  "types": "oofatfs.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wokwi/oofatfs-wasm.git"
+  },
+  "keywords": [
+    "wasm"
+  ],
+  "author": "Uri Shaked",
+  "files": [
+    "oofatfs.d.ts",
+    "dist"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wokwi/oofatfs-wasm/issues"
+  },
+  "homepage": "https://github.com/wokwi/oofatfs-wasm#readme",
+  "devDependencies": {}
+}
