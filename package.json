@@ -1,6 +1,6 @@
 {
   "name": "oofatfs",
-  "version": "1.0.0",
+  "version": "1.0.0-mkfs.twofatcopies",
   "description": "oofatfs compiled with Web Assembly (wasm)",
   "main": "dist/oofatfs.js",
   "types": "oofatfs.d.ts",
