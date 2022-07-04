@@ -3,7 +3,7 @@ const createFatFS = require('./dist/oofatfs-node');
 const debug = false;
 
 const BLOCK_COUNT = 1024;
-const BLOCK_SIZE = 4096;
+const BLOCK_SIZE = 512;
 
 const FM_FAT = 0x01;
 const FM_FAT32 = 0x02;
@@ -34,7 +34,7 @@ const flash = new Uint8Array(BLOCK_COUNT * BLOCK_SIZE);
           fatfs.HEAPU32[buf >> 2] = BLOCK_COUNT;
           break;
         case GET_SECTOR_SIZE:
-          fatfs.HEAPU32[buf >> 2] = BLOCK_SIZE;
+          fatfs.HEAPU16[buf >> 1] = BLOCK_SIZE;
           break;
         case GET_BLOCK_SIZE:
           fatfs.HEAPU32[buf >> 2] = 1;

@@ -11,15 +11,18 @@ CFLAGS = -s MODULARIZE=1 -s 'EXPORT_NAME="oofatfs"'  -Ioofatfs/src -I. -DFFCONF_
 
 all: dist/oofatfs.js dist/oofatfs-node.js
 
-dist/oofatfs.js: $(SOURCES) | dist
+dist/oofatfs.js: $(SOURCES) | dist patch
 	$(CC) -o $@ $(CFLAGS) -s EXPORT_ES6=1 -s ENVIRONMENT=web $^
 
-dist/oofatfs-node.js: $(SOURCES) | dist
+dist/oofatfs-node.js: $(SOURCES) | dist patch
 	$(CC) -o $@ $(CFLAGS) $^
 
 dist: 
 	mkdir $@
 	cp oofatfs/LICENSE $@
+
+patch:
+	git apply --reverse --check oofatfs.patch 2>/dev/null || git apply oofatfs.patch
 
 clean:
 	rm -rf dist
